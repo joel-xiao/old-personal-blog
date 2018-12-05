@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				position: relative;
+				overflow: hidden;
+				margin: 0 auto;
+				width: 360px;
+				height: 640px;
+				background: url(img/bg.png);
+				background-size: 360px 640px;
+			}
+			
+			.Bird {
+				/*transition: 0.3s;*/
+				position: relative;
+				width: 42px;
+				height: 32px;
+				background: url(img/0.gif) no-repeat;
+				top: 250px;
+				left: 50%;
+				margin-left: -16px;
+				background-size: 42px 32px;
+			}
+			
+			.bottom {
+				position: absolute;
+				bottom: 0;
+				width: 840px;
+				height: 140px;
+				background: url(img/ground.png);
+				background-size: 420px 140px;
+			}
+			
+			.guan {
+				position: absolute;
+				top: -50px;
+				left:360px;
+				width: 62.5px;
+				height: 400px;
+				background: url(img/pipe.png) no-repeat;
+				background-size: 1024px 1024px;
+				background-position: -82px -245px;
+			}
+			.guan_bottom {
+				position: absolute;
+				left: 360px;
+				top:500px;
+				width: 64px;
+				height: 400px;
+				background: url(img/pipe.png) no-repeat;
+				background-size: 1024px 1024px;
+				background-position: -6px -238px;
+			}
+			
+			.sile {
+				position: absolute;
+				top: 50%;
+				margin-top: -30.5px;
+				left: 50%;
+				margin-left: -111.5px;
+				width: 223px;
+				height: 61px;
+				background: url(img/pipe.png) no-repeat;
+				background-size: 1024px 1024px;
+				background-position: -531px -10px;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="guan"></div>
+			<div class="guan_bottom"></div>
+			<div class="sile"></div>
+			<div class="Bird"></div>
+			<div class="bottom"></div>
+		</div>
+		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var n = 0;
+			var index = 0;
+			var time=[];
+			$(window).keydown(function(e) {
+				var e = e || event;
+				clearInterval(time[2])
+				clearInterval(time[1])
+				console.log(e.keyCode);
+				if(e.keyCode == 38) {
+					var to = $('.Bird').offset().top;
+					$('.Bird').css('top', to - 60);
+					if(to < 60) $('.Bird').css('top', 0);
+					xiaoniao() 
+					return false;
+				}
+			});
+
+			xiaoniao();
+			caodi()
+			guan();
+			//小鸟
+			function xiaoniao() {
+				//小鸟扇翅膀
+				time[1]=setInterval(function() {
+					$('.Bird').css('background', 'url(img/' + index + '.gif)');
+					index++;
+					if(index > 2) {
+						index = 0;
+					}
+				}, 40);
+				//小鸟往下落
+				time[2]=setInterval(function() {
+					var to = $('.Bird').offset().top;
+					if(to > 471){
+						to = 472;
+						$('.sile').css('display','block');
+						for(var i=0;i<time.length;i++){
+							clearInterval(time[i]);
+						}
+						$(window).off('keydown');
+					}else{
+						$('.sile').css('display','none');
+					};
+					$('.Bird').css('top', to + 2);
+				}, 15);
+			}
+
+			//草地
+			function caodi() {
+				//草地滚动
+				var n=1;
+				var ns=1;
+				time[3]=setInterval(function() {
+						n++
+						$('.bottom').css('backgroundPosition','-'+n+'px 0px');
+					},4);
+					//背景图
+					time[4]=setInterval(function() {
+						ns++
+							$('.box').css('backgroundPosition','-'+ns+'px 0px');
+						},4);
+			}
+			function guan() {
+				//上边的管top值
+					var top=$('.guan').offset().top;
+				//下边的管top值
+					var bot=$('.guan_bottom').offset().top;
+				time[5]=setInterval(function() {
+					//随机出来的高度
+					var h= Math.floor(Math.random() *300);
+					$('.guan').css('top',top-h);
+					$('.guan_bottom').css('top',bot-h);
+					//管的动画
+					$('.guan').animate({
+						left: -125
+					}, 2500, function() {
+						$('.guan').css('left', 360);
+					});
+					$('.guan_bottom').animate({
+						left: -125
+					}, 2500, function() {
+						$('.guan_bottom').css('left', 360);
+					});
+					console.log(bot-h);
+				},2500);
+			}
+		</script>
+	</body>
+
+</html>

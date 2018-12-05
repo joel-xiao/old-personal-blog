@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			nav{
+				color: #333;
+				height: 45px;
+				line-height: 45px;
+			}
+			nav span{
+				cursor: pointer;
+				color: #22ce9b;
+				font-size: 16px;
+				margin-top: 6px;
+			}
+			nav >div:nth-child(2){
+				text-align: center;
+				font-size: 16px;
+			}
+			#nav{
+				margin: 0;
+				padding: 0;
+			}
+			nav >div:last-child{
+				text-align: right;
+			}
+			.search{
+				background: #f0f0f2;
+				padding: 10px;
+			}
+			.btn{
+				border-right: none;
+				background: #fff;
+			}
+			.form-control{
+				border-left: none;
+			}
+			.glyphicon-search{
+				border-right: none;
+				color: #333;
+			}
+			.aladinBlock{
+				position: relative;
+			}
+			.aladinBlock-left{
+				position: relative;
+				left: 24px;
+				width:50px;
+				top: 20px;
+			}
+			.aladinBlock-left img{
+				height: 74px;
+			}
+			.aladinBlock-right{
+				display: block;
+				position: absolute;
+				left: 94px;
+				top: 20px;
+			}
+			.aladinBlock-right h4{
+				margin: 0;
+				padding: 0;
+				color: #ffb579;
+			}
+			.author{
+				width: 100%;
+				position: relative;
+				color: #999;
+				font-size: 12px;
+				margin: 8px 0;
+			}
+			.book-tag{
+				overflow: hidden;
+				height: 22px;
+			}
+			.book-tag span{
+				font-size: 12px;
+				height: 22px;
+				line-height: 16px;
+				border: 1px solid rgba(153,153,153,.3);
+				border-radius: 2px;
+				padding: 0 4px;
+				margin-right: 4px;
+				padding-top: 2px;
+				color: #999;
+				display: inline-block;
+			}
+			.book-tag span:first-child{
+				border:1px solid #00c98d;
+				color: #00c98d;
+			}
+			.book-tag{
+				margin: 0;
+				padding: 0;
+			}
+			.author span{
+				position: absolute;
+				right: 0;
+				top: 0;
+				height: 22px;
+				background: #e6e7ed;
+				border-radius: 2px;
+				color: #333;
+				line-height: 22px;
+				padding: 0 4px;
+				font-size: 12px;
+			}
+			.btn-group{
+				margin-top: 40px;
+			}
+			.btn-group a:first-child{
+				width: 48%;
+				height:40px;
+				line-height:40px;
+				background:#00c98d;
+				color: #fff;
+				border-radius: 4px;
+				font-size: 18px;
+				display: inline-block;
+				text-align: center;
+				margin-right: 4%;
+			}
+			.btn-group a:last-child{
+				width: 48%;
+				height:40px;
+				line-height:40px;
+				border: 1px solid #00c98d;
+				border-radius: 4px;
+				font-size: 18px;
+				color: #00c98d;
+				display: inline-block;
+				text-align: center;
+			}
+			.last-chapter{
+				border-top: 1px solid #e5e5e5;
+				-webkit-box-align: center;
+				margin-top: 20px;
+				padding: 10px 0;
+			}
+			.latest {
+				text-align: 2rem;
+				padding-left: 26px;
+				background-repeat: no-repeat;
+				background-size: 16px 16px;
+				background-position: left center;
+				font-size: 14px;
+				color: #333;
+				margin-right: 16px;
+				height: 22px;
+				line-height: 22px;
+				margin-right: 0;
+				padding-right: 0;
+			}
+			.last-chapter .chaptername {
+				margin: 0;
+				padding: 0;
+				height: 22px;
+				color: #999;
+				font-size: 12px;
+				line-height: 22px;
+				padding-right: 6px;
+				background-repeat: no-repeat;
+				background-size: 6px 12px;
+				background-position: right center;
+			}
+			.roww .aladinBlock{
+				height: 110px;
+				border-bottom: 1px solid #e5e5e5;
+			}
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="container-fluid" v-if="date" v-cloak>
+			<div id="" class="row">
+				<nav id="nav" class="col-xs-12">
+					<div class="col-xs-2"><span class="glyphicon glyphicon-arrow-left"></span></div><div class="col-xs-8">搜索中心</div><div class="col-xs-2"><span class="glyphicon glyphicon-home"></span></div>
+				</nav>
+				<div class="col-xs-12 search">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" @click='ajaxs'> </span></button>
+						</span>
+					<input type="text" class="form-control" v-model='name' @keyup.enter='ajaxs'  placeholder="书名/作者/关键词">
+				</div><!-- /input-group -->
+			</div>
+			</div>
+			<div class="row" v-if="date.aladdin.title">
+				<div class="aladinBlock">
+					<div id="" class="aladinBlock-left">
+						<img  :src="date.aladdin.cover" >
+					</div>
+					<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+						<h4>{{date.aladdin.title}}</h4>
+						<p class="author">{{date.aladdin.author}} <span style="cursor: pointer;">加书架</span></p>
+						<p class="book-tag p"><span v-for='i in date.aladdin.tags.split(",")'>{{i}}</span></p>
+					</div>
+				</div>
+				<div class="btn-group col-xs-12">
+					<a href="" class="">开始阅读</a><a href="">查看目录</a>
+				</div>
+				<div class="last-chapter  col-xs-12">
+					<span id="" class="col-xs-1 latest"><span></span>末章</span><span id="" class="col-xs-11 chaptername">{{date.aladdin.latest_chapter.cname}}</span>
+				</div>
+			</div>
+			<div class="row roww">
+				<div class="aladinBlock" v-for="i in date.data">
+					<div id="" class="aladinBlock-left">
+						<img :src="i.cover" >
+					</div>
+					<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+						<h4>{{i.title}}</h4>
+						<p class="author">{{i.author}} <span style="cursor: pointer;">加书架</span></p>
+						<p class="book-tag p"><span v-for="j in i.tags.split(',')">{{j}}</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../vue-resource.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el: '#box',
+				data: {
+					date:'',
+					name:'诛仙'
+				},
+				beforeMount(){
+					this.ajaxs()
+				},
+				methods: {
+					ajaxs(){
+						this.$http.get('http://read.xiaoshuo1-sm.com/novel/i.php',{params:{
+							do: 'is_serchpay',
+							page: 1,
+							size: 10,
+							q: this.name,
+							filterMigu: 1,
+							p: 3,
+							shuqi_h5:'' ,
+							_: 1539850817379
+						}}).then((data)=>{
+							this.date=data.data;
+							console.log(this.date)
+						},(data)=>{
+							console.log(data)
+						})
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

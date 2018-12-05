@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+				box-sizing: border-box;
+			}
+			
+			.box {
+				position: relative;
+				width: 1226px;
+				height: 460px;
+				margin: 0 auto;
+				margin-top: 100px;
+				background-color: red;
+			}
+			
+			.leff {
+				z-index: 1;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: auto;
+				height: 100%;
+			}
+			
+			.left {
+				float: left;
+				padding: 5% 0;
+				width: 260px;
+				height: 100%;
+				background-color: rgba(0, 0, 0, .8)
+			}
+			
+			.left li {
+				overflow: hidden;
+				font-size: 14px;
+				line-height: 40px;
+				width: 100%;
+				height: 10%;
+				color: #fff;
+				padding: 0 10%;
+				line-height: ;
+			}
+			
+			.left li.active {
+				background-color: darkred;
+				color: sandybrown;
+			}
+			
+			.left li span {
+				float: right;
+			}
+			
+			.leff_right {
+				display: none;
+				overflow: hidden;
+				float: left;
+				width:520px;
+				height: 100%;
+				background-color: #fff;
+				padding: 0 20px;
+			}
+			
+			.leff_right li {
+				float: left;
+				font-size: 14px;
+				height: 76px;
+				line-height: 76px;
+				/*width: ;*/
+				width: 240px;
+			}
+			
+			.leff_right li img {
+				float: left;
+				margin-top: 20px;
+				width: 40px;
+				height: 40px;
+			}
+			
+			.leff_right li p {
+				margin-left: 10px;
+				float: left;
+				width: 140px;
+			}
+			
+			.leff_right li span {
+				text-align: center;
+				margin-top: 25px;
+				color: darkorange;
+				float: left;
+				width: 46px;
+				height: 24px;
+				line-height: 22px;
+				border: 1px solid darkorange;
+				cursor: pointer;
+			}
+			
+			.leff_right li span.active {
+				
+				color: #FFFFFF;
+				background-color: darkorange;
+			}
+			
+			.right {
+				position: relative;
+				overflow: hidden;
+				height: 100%;
+				width: 100%;
+				background-color: blue;
+			}
+			
+			.right ul {
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.right ul li {
+				transition: 0.25s;
+				position: absolute;
+			}
+			
+			.right ul li,
+			.right ul li img {
+				height: 460px;
+				width: 1226px;
+				float: left;
+			}
+			
+			.right span {
+				text-align: center;
+				color: #fff;
+				line-height: 40px;
+				position: absolute;
+				top: 50%;
+				width: 40px;
+				height: 40px;
+				display: block;
+				margin-top: -20px;
+				font-size: 24px;
+				cursor: pointer;
+				display: none;
+				transition: 0.25s;
+			}
+			
+			.right span.active {
+				background-color: rgba(0, 0, 0, .5);
+				color: sandybrown;
+			}
+			
+			.right .prev {
+				left: 265px;
+			}
+			
+			.right .next {
+				right: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="leff">
+				<ul class="left">
+					<li>手机 平板<span>></span></li>
+					<li>电视 盒子<span>></span></li>
+					<li>路由器 智能配件<span>></span></li>
+					<li>移动电源 插线板<span>></span></li>
+					<li>耳机 音响<span>></span></li>
+					<li>电池 储存卡<span>></span></li>
+					<li>保护套 后盖<span>></span></li>
+					<li>贴膜 其他配件<span>></span></li>
+					<li>米兔 服装<span>></span></li>
+					<li>背包 其他周边<span>></span></li>
+				</ul>
+				<div class="leff_right">
+					<!--<li><img src="img/baohu.jpg" />
+						<p>大米NOTE</p><span id="">抢购</span>
+					</li>-->
+				</div>
+			</div>
+			<div class="right">
+				<ul>
+					<li><img src="img/T1hiDvBvVv1RXrhCrK.jpg" /></li>
+					<li><img src="img/T1jrxjB_VT1RXrhCrK.jpg" /></li>
+					<li><img src="img/T1oTJjBKKT1RXrhCrK.jpg" /></li>
+					<li><img src="img/T1RICjB7DT1RXrhCrK.jpg" /></li>
+					<li><img src="img/T1vWdTBKDv1RXrhCrK.jpg" /></li>
+				</ul>
+				<span class="prev"><</span>
+				<span class="next">></span>
+			</div>
+		</div>
+		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('.right ul').width($('li').width() * $('li').length);
+			var n = 0;
+			$('.prev').click(function() {
+				n--;
+				tab();
+			});
+			$('.next').click(function() {
+				n++;
+				tab();
+			});
+			$('.box').mouseover(() => {
+				clearInterval(time);
+				$('.right span').css('display', 'block');
+			});
+			$('.right').find('span').mouseover(function() {
+				$(this).addClass('active');
+			});
+			$('.right').find('span').mouseleave(function() {
+				$(this).removeClass('active');
+			});
+			$('.box').mouseleave(() => {
+				set();
+				$('.right span').css('display', 'none');
+			});
+			$('.left li').mousemove(function() {
+				$('.left li').removeClass('active');
+				$(this).addClass('active');
+			});
+			$('.left li').eq(0).mousemove(function() {
+				$.getJSON('one.json', function(msg) {
+					fn(msg, '.leff_right')
+				});
+			});
+			$('.left li').eq(1).mousemove(function() {
+				$.getJSON('two.json', function(msg) {
+					fn(msg, '.leff_right')
+				});
+			});
+			$('.left li').eq(2).mousemove(function() {
+				$.getJSON('three.json', function(msg) {
+					fn(msg, '.leff_right')
+				});
+			});
+			$('.left li').eq(3).mousemove(function() {
+				$.getJSON('four.json', function(msg) {
+					fn(msg, '.leff_right')
+				});
+			});
+			$('.left li').eq(4).mousemove(function() {
+				$.getJSON('five.json', function(msg) {
+					fn(msg, '.leff_right')
+				});
+			});
+			$('.left li').eq(5).mousemove(function() {
+				$.getJSON('one.json', function(msg) {
+					fn(msg, '.leff_right')
+				});
+			});
+			$('.left li').eq(6).mousemove(function() {
+				$.getJSON('two.json', function(msg) {
+					fn(msg, '.leff_right')
+				});
+			});
+			$('.left li').eq(7).mousemove(function() {
+				$.getJSON('three.json', function(msg) {
+					fn(msg, '.leff_right')
+				});
+			});
+			$('.left li').eq(8).mousemove(function() {
+				$.getJSON('four.json', function(msg) {
+					fn(msg, '.leff_right')
+				});
+			});
+			$('.left li').eq(9).mousemove(function() {
+				$.getJSON('five.json', function(msg) {
+					fn(msg, '.leff_right')
+				});
+			});
+			$('.box').mouseleave(function() {
+				$('.left li').removeClass('active');
+				$('.leff_right').css('display','none');
+			});
+			$('.left li').mouseover(function() {
+				$('.leff_right').css('display','block');
+			});
+			$('.leff_right').find( 'span').mouseover(function() {
+				$(this).addClass('active');
+			});
+			$('.leff_right').find( 'span').mouseleave(function() {
+				$(this).removeClass('active');
+			});
+
+			function tab() {
+				n < 0 ? n = 4 : n;
+				n > 4 ? n = 0 : n;
+				$('.right ul').find('li').css('opacity', 0).eq(n).css('opacity', 1);
+			}
+
+			function set() {
+				time = setInterval(function() {
+					n++;
+					tab();
+				}, 1500);
+			};
+			set();
+			
+			function fn(data, mao) {
+				var str='';
+					$.each(data, function(i, ele) {
+						str += '<li><img src="'+ele.img+'" />'+
+						'<p>'+ele.tile+'</p><span id="">抢购</span>'+
+					'</li>';
+					})
+					$(mao).html(str)
+				}
+
+				
+
+		</script>
+	</body>
+
+</html>

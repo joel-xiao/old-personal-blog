@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="header col-xs-12">
+					<div class="col-xs-6">
+						<img src="http://c-shuqi.11222.cn/assets/logo_7a44de2.png" alt="">
+						<img src="http://c-shuqi.11222.cn/assets/website-name_c08f935.png" alt="">
+					</div>
+					<div class="col-xs-6">
+						<img src="http://c-shuqi.11222.cn/assets/search_d5e5264.png" alt="">
+						<img src="http://c-shuqi.11222.cn/assets/bookshelf_606cf21.png" alt="">
+						<img src="data:image/png;base64,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" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="fenlei">
+					<dl>
+						<dt><i></i></dt>
+						<dd>分类</dd>
+					</dl>
+					<dl>
+						<dt><i></i></dt>
+						<dd>排行</dd>
+					</dl>
+					<dl>
+						<dt><i></i></dt>
+						<dd>女频</dd>
+					</dl>
+					<dl>
+						<dt><i></i></dt>
+						<dd>男频</dd>
+					</dl>
+					<dl>
+						<dt><i></i></dt>
+						<dd>书单</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="row">
+				<div class="xz col-xs-12">
+					<img src="http://img-tailor.11222.cn/pm/book/operate/2018020715462184.jpg" alt="">
+				</div>
+			</div>
+			<div class="row"  id="box">
+				<div class="jp col-xs-12">
+					<h3>精品推荐</h3>
+					<ul class="col-xs-12">
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201708251753083583.jpg" alt=""></dt>
+								<dd>
+									<p class="book-title">万古邪帝</p>
+									<span class="book-author">子莫谦</span>
+								</dd>
+							</dl>
+						</li>
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201707260400011774.jpg" alt=""></dt>
+								<dd>
+									<p class="book-title">一吻成欢：总裁大人你好棒</p>
+									<span class="book-author">芒果慕斯</span>
+								</dd>
+							</dl>
+						</li>
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201805171133353265.jpg" alt=""></dt>
+								<dd>
+									<p class="book-title">天才萌宝，神秘妈咪</p>
+									<span class="book-author">婤子</span>
+								</dd>
+							</dl>
+						</li>
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201704131706005068.jpg" alt=""></dt>
+								<dd>
+									<p class="book-title">一胎双宝：老公大人体力好</p>
+									<span class="book-author">乔越</span>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+					<div class="click col-xs-12">
+							换一换<span class="glyphicon glyphicon-refresh"></span>
+					</div>
+					<div class="div col-xs-12"></div>
+				</div>
+				<div class="jp col-xs-12">
+					<h3>女生美文</h3>
+					<ul class="col-xs-12">
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201802130945088825.jpg" alt=""></dt>
+								<dd>
+									<p class="book-title">农门长嫂富甲天下</p>
+									<span class="book-author">紫云飞</span>
+								</dd>
+							</dl>
+						</li>
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201703201725224850.jpg" alt="">
+								</dt><dd>
+									<p class="book-title">顾少的天价娇妻</p>
+									<span class="book-author">燕紫</span>
+								</dd>
+							</dl>
+						</li>
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201804031329076437.jpg" alt="">
+								<dd>
+									<p class="book-title">重生九零之麻辣小鲜妻</p>
+									<span class="book-author">非韩</span>
+								</dd>
+							</dl>
+						</li>
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201707311826461167.jpg" alt="">
+								<dd>
+									<p class="book-title">婚心荡漾：腹黑老公馋上我</p>
+									<span class="book-author">宁北瑶</span>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+					<div class="books-list col-xs-12">
+						<dl class="col-xs-12">
+							<dt>独家蜜爱：晚安，莫先生！ <p><span>连载</span><span>现代言情</span></p></dt>
+							<dd>“莫太太，蜜月期，你确定要把老公关在外面？”新婚第二夜，某男手拿钥匙打开紧锁的房门。
+						“莫先生，休息一夜，再战如何？”某女拉过被子将自己裹成粽子。
+						某男摇头，顺便堵上她的嘴。
+						某女哀嚎，宝宝很困，宝宝腰酸，宝宝伤不起啊！
+						被心爱的男人劈腿，打击，事业下滑。
+						莫逸尘，锦城最神秘，最权利滔天，最俊美无铸的男人，他对许倾倾说：“嫁我，你失去的，我全替你讨回！”</dd>
+												</dl>
+						<dl class="col-xs-12">
+							<dt>一品农门妻<p><span>连载</span><span>古典架空</span></p></dt>
+							<dd>沈小婉病死后穿成了古代寒门寡妇，上有极品亲戚要斗，下有三岁小包子要养活，那能怎么办？撒泼打滚连撕带咬分了家，带着小包子在村子里默默扎了根致了富，刚准备给自己和儿子找个靠山时，以为已经死了的丈夫又回来了，她该怎么办？</dd>
+						</dl>
+						<dl class="col-xs-12">
+							<dt>重回1985：麻辣俏媳妇<p><span>连载</span><span>现代言情</span></p></dt>
+							<dd>京城大院里谁都知道，司墨衍不近女色，小时候被批过命，那是要孤独终老的，可忽然有一天，司墨衍不但带回来个女的，还把人给睡了，这一睡可不得了，之后就完全变成了宠妻狂魔。“司墨衍，我要A市中心的地。”“明天就过户到你名下。”“司墨衍，我要飞机。”“老婆，飞机已经停在后院。”“司墨衍，我要天上的月亮。”“没问题，老公这就带你上天，摘月亮。”顾乔月表示，老天给她最大的礼物不是重生，而是这个男人。</dd>
+						</dl>
+					</div>
+					<div class="click col-xs-12">
+							换一换<span class="glyphicon glyphicon-refresh"></span>
+					</div>
+					<div class="div col-xs-12"></div>
+				</div>
+				<div class="jp col-xs-12">
+					<h3>男生热文</h3>
+					<ul class="col-xs-12">
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201805151422323919.jpg" alt=""></dt>
+								<dd>
+									<p class="book-title">乡野小渔民</p>
+									<span class="book-author">稀饭</span>
+								</dd>
+							</dl>
+						</li>
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201704171406022998.jpg" alt=""></dt>
+								<dd>
+									<p class="book-title">异世厨神</p>
+									<span class="book-author">爱美食的喵</span>
+								</dd>
+							</dl>
+						</li>
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201807261041247883.jpg" alt=""></dt>
+								<dd>
+									<p class="book-title">贴身狂少</p>
+									<span class="book-author">素徒</span>
+								</dd>
+							</dl>
+						</li>
+						<li class="col-xs-3">
+							<dl>
+								<dt><img src="http://img-tailor.11222.cn/bcv/big/201711151404402865.jpg" alt=""></dt>
+								<dd>
+									<p class="book-title">末世供货商</p>
+									<span class="book-author">星夜无辰</span>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+					<div class="books-list col-xs-12">
+						<dl class="col-xs-12">
+							<dt>白马啸三国<p><span>连载</span><span>架空历史</span></p></dt>
+							<dd>“莫太太，蜜月期，你确定要把老公关在外面？”新婚第二夜，某男手拿钥匙打开紧锁的房门。
+						“莫先生，休息一夜，再战如何？”某女拉过被子将自己裹成粽子。
+						某男摇头，顺便堵上她的嘴。
+						某女哀嚎，宝宝很困，宝宝腰酸，宝宝伤不起啊！
+						被心爱的男人劈腿，打击，事业下滑。
+						莫逸尘，锦城最神秘，最权利滔天，最俊美无铸的男人，他对许倾倾说：“嫁我，你失去的，我全替你讨回！”</dd>
+												</dl>
+						<dl class="col-xs-12">
+							<dt>代号传奇<p><span>连载</span><span>谍战特工</span></p></dt>
+							<dd>沈小婉病死后穿成了古代寒门寡妇，上有极品亲戚要斗，下有三岁小包子要养活，那能怎么办？撒泼打滚连撕带咬分了家，带着小包子在村子里默默扎了根致了富，刚准备给自己和儿子找个靠山时，以为已经死了的丈夫又回来了，她该怎么办？</dd>
+						</dl>
+						<dl class="col-xs-12">
+							<dt>铁血兵锋<p><span>连载</span><span>战争幻想</span></p></dt>
+							<dd>京城大院里谁都知道，司墨衍不近女色，小时候被批过命，那是要孤独终老的，可忽然有一天，司墨衍不但带回来个女的，还把人给睡了，这一睡可不得了，之后就完全变成了宠妻狂魔。“司墨衍，我要A市中心的地。”“明天就过户到你名下。”“司墨衍，我要飞机。”“老婆，飞机已经停在后院。”“司墨衍，我要天上的月亮。”“没问题，老公这就带你上天，摘月亮。”顾乔月表示，老天给她最大的礼物不是重生，而是这个男人。</dd>
+						</dl>
+					</div>
+					<div class="click col-xs-12">
+							换一换<span class="glyphicon glyphicon-refresh"></span>
+					</div>
+					<div class="div col-xs-12"></div>
+				</div>
+				<div class="jp col-xs-12">
+					<h3>新书专区</h3>
+					<div class="aladinBlock">
+						<div id="" class="aladinBlock-left">
+							<i></i>
+							<img  src="http://img-tailor.11222.cn/bcv/big/201804241556489570.jpg" >
+						</div>
+						<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+							<h4>丹武至尊</h4>
+							<p class="author">尔东陈</p>
+							<p class="author">前世，唐麟被誉为“丹皇”，却遭“武帝”忌惮。今世重生，一个早已被灭族的唐氏，一个修武天赋极烂的少年。唐麟知道他这一世有两个使命。一，他要将忘恩负义的武帝，从那至高的统治帝位上打下来，并且将他踩在脚底下。二，他要让唐氏一族的弟子，遍布于天下，并以唐氏之名定义天玄大陆的苍穹。“请不要用凡人的眼光看待我，因为我早已是神！”——唐麟</p>
+							<p class="book-tag p"><span>连载</span><span>74万字</span><span>爽文</span><span>升级文</span></p>
+						</div>
+					</div>
+					<div class="books-list col-xs-12">
+						<dl class="col-xs-12">
+							<dt>都市猎艳保镖<p><span>连载</span><span>都市生活</span></p></dt>
+						</dl>
+						<dl class="col-xs-12">
+							<dt>萌宝来袭：农门小娇娘<p><span>连载</span><span>古典架空</span></p></dt>
+						</dl>
+						<dl class="col-xs-12">
+							<dt>重生九零小商女<p><span>连载</span><span>现代言情</span></p></dt>
+						</dl>
+						<dl class="col-xs-12">
+							<dt>农家小弃妇<p><span>连载</span><span>穿越时空</span></p></dt>
+						</dl>
+						
+					</div>
+					<div class="click col-xs-12">
+							查看更多
+					</div>
+					<div class="div col-xs-12"></div>
+				</div>
+				<div class="jp col-xs-12">
+					<h3>书旗畅销榜</h3>
+					<div class="aladinBlock">
+						<div id="" class="aladinBlock-left">
+							<i></i>
+							<img  src="http://img-tailor.11222.cn/bcv/big/201802011523505197.jpg" >
+						</div>
+						<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+							<h4>逆天神医</h4>
+							<p class="author">月亮不发光</p>
+							<p class="author">【年度神作】真正的神医是什么？是会杀人的神医！
+杀一人，救百人，杀不杀？
+杀！
+这是一个不一样的神医；他妙手回春，有人将他的名字刻在长生牌位之上，日夜供奉。
+他受人唾骂，有人恨不得将他剥皮抽筋，日夜诅咒。
+他左擒济世壶，一手金针渡人苦海；他右持杀生剑，一剑送人断头台。
+可救人病，亦可要人命！</p>
+							<p class="book-tag p"><span>连载</span><span>394万字</span><span>神医</span><span>医术</span></p>
+						</div>
+					</div>
+					<div class="books-list col-xs-12">
+						<dl class="col-xs-12">
+							<dt>圣祖<p><span>完结</span><span>东方玄幻</span></p></dt>
+						</dl>
+						<dl class="col-xs-12">
+							<dt>诸天纪<p><span>连载</span><span>古典仙侠</span></p></dt>
+						</dl>
+						<dl class="col-xs-12">
+							<dt>逆天邪神<p><span>连载</span><span>异界大陆</span></p></dt>
+						</dl>
+						<dl class="col-xs-12">
+							<dt>最强狂兵<p><span>连载</span><span>都市生活</span></p></dt>
+						</dl>
+						
+					</div>
+					<div class="click col-xs-12">
+							查看更多
+					</div>
+					<div class="div col-xs-12"></div>
+				</div>
+				<div class="jp col-xs-12">
+					<h3>根据你的阅读兴趣为你推荐</h3>
+					<div class="aladinBlock">
+						<div id="" class="aladinBlock-left">
+							<img  src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAyAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAxNEE2RUJGQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAxNEE2RUMwQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDE0QTZFQkRDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDE0QTZFQkVDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAIBgYGBgYIBgYIDAgH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" >
+						</div>
+						<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+							<h4>天价妈咪：爹地闪开宝宝来</h4>
+							<p class="author">安墨染</p>
+							<p class="author">小包子君司琰第一次看到自己的妈咪时，夜鸢从天而降，飘然若仙，宛若天人。小包子对她勾勾手指，霸气的说：“美人，你等我十年，十年后我一定娶你！”君墨麒冷眼一眯，拎着他的领子，用身高碾压他，“她是你老子看中的女人，小家伙，叫妈咪。”君司琰傲娇冷哼：“妈咪是我的，爹地靠边站！”夜鸢内心OS：这是哪家神经病医院跑出来的大小两只神经病？赶紧抓回去！</p>
+							<p class="book-tag p"><span>连载</span><span>240万字</span><span>轻松</span><span>甜宠</span></p>
+						</div>
+					</div>
+					<div class="aladinBlock">
+						<div id="" class="aladinBlock-left">
+							<img  src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAyAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAxNEE2RUJGQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAxNEE2RUMwQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDE0QTZFQkRDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDE0QTZFQkVDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAIBgYGBgYIBgYIDAgH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" >
+						</div>
+						<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+							<h4>极品天医</h4>
+							<p class="author">真剑</p>
+							<p class="author">你是家财万贯，权势滔天的大人物？惹毛了我——不治！你是容颜无双，倾国倾城的女神？惹毛了我——不泡！你是出身显赫，实力强横的天之骄子？惹毛了我——猛踩！天医门第二十七代传人萧鸣来到都市之后，掀起了一场波澜壮阔的精彩逆袭之旅！</p>
+							<p class="book-tag p"><span>连载</span><span>212万字</span><span>爽文</span><span>腹黑</span></p>
+						</div>
+					</div>
+					<div class="aladinBlock">
+						<div id="" class="aladinBlock-left">
+							<img  src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAyAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAxNEE2RUJGQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAxNEE2RUMwQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDE0QTZFQkRDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDE0QTZFQkVDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAIBgYGBgYIBgYIDAgH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" >
+						</div>
+						<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+							<h4>乡村神医</h4>
+							<p class="author">七星</p>
+							<p class="author">卫校毕业的张凡，被人构陷，走投无路之际，偶得上古医书，兼具神识怪瞳，更有一只小妙手能削铁如泥、修复肌理……谁能热血护花、冷眼杀敌？谁能治愈妇科杂症、疗遍世间顽疾？且看我农家小神医！</p>
+							<p class="book-tag p"><span>连载</span><span>295万字</span><span>爽文</span><span>神医</span></p>
+						</div>
+					</div>
+					<div class="aladinBlock">
+						<div id="" class="aladinBlock-left">
+							<img  src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAyAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAxNEE2RUJGQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAxNEE2RUMwQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDE0QTZFQkRDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDE0QTZFQkVDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAIBgYGBgYIBgYIDAgHCAwOCggICg4QDQ0ODQ0QEQwODQ0ODBEPEhMUExIPGBgaGhgYIyIiIiMnJycnJycnJycnAQkICAkKCQsJCQsOCw0LDhEODg4OERMNDQ4NDRMYEQ8PDw8RGBYXFBQUFxYaGhgYGhohISAhIScnJycnJycnJyf/wAARCAGQASwDASIAAhEBAxEB/8QAYQABAQEBAQEAAAAAAAAAAAAAAAMCAQQHAQEBAAAAAAAAAAAAAAAAAAAAARABAQABAwQDAQEBAQEAAAAAAAECETEDIUFREmFxMhORgSIjEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD74AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM3PGd/8ZvL4gKCX9b4Jy3vAVEv6/Dl5Mrt0BYRnJlPkvJlfgFhD3y8u/wBM/ILCHvle575eQXHn9r5rvvn5Bcef2vmu++XkFxH+mTePJLv0oNgAAAAAAAAAAAAAAAAAI8mWt0m0WQzmmVBkABfDHTH5u6M62RW3/wCmMBq443eJZ4THrNlk+XaAk1jhcvieTDH2vXabt3l06YzoDs4se9cvFO1ax5Jl02rQPPZZdK4ryzpKkAaUW4vzfsERTl3iYAALcd1x+m0uK9bPKoAAAAAAAAAAAAAAAAFuk1Qyy9rqtltfp5wAAdx/U+1bNeSfTOHHelvRX5AZyxmWmvZoBO8Xip2WXSvQxyyaa9wRUnL06zWpgNZZ3L68OSW7Rxbj/IJWWbq8X5v2xy/pvi/N+wZ5d4x627Rvl3jXH+QRss3G+X9MA1h+4uhh+ouAAAAAAAAAAAAAAAADl2qEmt0j0XZ5gbnFl36KY4TH5vkwz9ppd2gANZroADlsk1oO2yTWoZ5+1+DLK5Xr/jIAAD0YzTGRHDH2y+JuryZes070Ecrrlarxfm/aK3F+b9gzy7w4rvP+nLvGJfWygpyzpKk9F0zx+KhZpdKDuH6i6GH6i4AAAAAAAAAAAAAAAAOZTWWPO9GV0lrzgbbKTls3mqZuCv8AS5dMZ1reM9Zp/rmGHrPloBLlvWRVz1lutnUHnHpNJQeYXvHjfhLLC477eQUmWOGE83slbcrrXABbi/N+2MeP2muqmOPrNAY5d4mpy3rImDeGfr9O8ml0s7pgNYfqLoYfqLgAAAAAAAAAAAAAAAAPPd6vltfpHHjyy+IDklt0iuGHr1u7WOMx2/10AHPaa6a9QdcueOO9dQz/AFQbvLO0c/rfCbfHjrde0BYslmlAHns0tnhxrK65Wsg7MspNJXffLyy765eKDgOyW7A4O+uU3lcB3H9TTy9CGF0yi4AAAAAAAAAAAAAAAAF6S1yXWSus4dJ63eA05bMZrTLKYzWoZZXK60GsuS5dJ0jmH7jLfH+gWRywy1tk11WARnHld+kVkkmkdAE+TPT/AMzfuZ8nbH/UgW4/W47faeePrfjsYW43Xt3azzlmkn/QTWxzx0mt6p4SXKSq+uPiAllp7XTZ3jsl1t0U9cPEPXDxAZ5M5cdJddUl/THwgDs3n29DzzePQAAAAAAAAAAAAAAAAAhc7crZ0XeezS2A5bb1oACnFvU1OLegqjc7jldPOyzz3rfsG/63wxcsst6XG47qY4S4dd+1BIUvHJNbUwWxzx0k77NZfmoY/qfa+X5v0CXH+4pyfip8f7iucuWOkB5xv+WXw7OK96CrzPTekteYGsP1F0OOa5RcAAAAAAAAAAAAAAAAB58uuV+3oQz/AFfsGQAHZbjdY4AplySzSb1nHGXzfiOycdmtvXvGplrZjhNJ3Az9vXTpJ4MLlZrrttDOS65S9ZuY5XKXpOyhfWzXK66eErpr02VzmmN6adeySDuP6n2vl+b9IY/qfb0WazSg8+NuN1nZbDK5S6s8mkx0n+Ncc0x++oOZ53GyRvsjyXXL66LdgQyzyy6XZkd0s3gO8f7i6HH+4uAAAAAAAAAAAAAAAAAjyTTKrM5z2xs/wEAAAAG7pjj6ze71hvDKY66zXwDtxswmMnW9aSTCWZXrezMuueuXd3K4zpj1+VGtZ6aya9e7GWXtNpDG469bY7yeuuuP/QZl0svhu8tu3RMQVww1/wDWXV3Pkk6TdL2ummvRwB6JZZLHndls2ugKzjkuuv8AxzlvSRP2y80kuV6daDfFOtqrmOPrNHQAAAAAAAAAAAAAAAAAATzwtuuP/WPTLwuAhMMr2Lx5Ttr9LgIemXgmGV7LgPP65a6aFxsumnV6AHnmOV2jj0mkB55Ldpq1/PJYBG8WTkwyvZcBCYZXs7/LL4WATnF5rckxmkdAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf//Z" >
+						</div>
+						<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+							<h4>陆公子的绯闻女友</h4>
+							<p class="author">半支烟头</p>
+							<p class="author">娱乐圈新晋女神南初的幕后金主被曝光——江城首富，低调神秘的陆公子。媒体记者面前，他公然牵起南初的手：“南初是我养的。”整个江城哗然……人红是非多，南初的黑历史被人挖出时，陆公子选择视而不见。医院里，医生拿着妊娠证明：孩子六周，要还是不要。手术台上，陆公子赶到：南初，你要弄死我的儿子，我就弄死你。南初却笑：一命抵一命，这样才公平。</p>
+							<p class="book-tag p"><span>连载</span><span>141万字</span><span>总裁</span><span>冰山</span></p>
+						</div>
+					</div>
+					<div class="aladinBlock">
+						<div id="" class="aladinBlock-left">
+							<img  src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAyAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAxNEE2RUJGQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAxNEE2RUMwQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDE0QTZFQkRDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDE0QTZFQkVDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAIBgYGBgYIBgYIDAgH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" >
+						</div>
+						<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+							<h4>他吃了条龙</h4>
+							<p class="author">水门绅士</p>
+							<p class="author">吞噬龙魂，逆转命格，与九位天命之女纠葛不休，财阀千金让我不得不站在财富的巅峰，为了驯服最美杀手，我无奈成为令人闻风丧胆的杀手之王，那俏皮的歌后影后，我又是娱乐圈的大咖，另外，为得小护士芳心我救死扶伤，哦，还有那一声军装的女兵王，我保家卫国，悍我中华……我所做的一切只是为了，活下去，美好的活下去。</p>
+							<p class="book-tag p"><span>完结</span><span>324万字</span><span>爽文</span><span>都市</span></p>
+						</div>
+					</div>
+					<div class="aladinBlock">
+						<div id="" class="aladinBlock-left">
+							<img  src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAyAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAxNEE2RUJGQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAxNEE2RUMwQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDE0QTZFQkRDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDE0QTZFQkVDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAIBgYGBgYIBgYIDAgH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" >
+						</div>
+						<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+							<h4>错嫁替婚总裁</h4>
+							<p class="author">分花拂柳</p>
+							<p class="author">为了支付哥哥的治疗费，沈柒不得不代替自己的妹妹嫁入豪门贺家。她一直以为自己嫁的是贺家长子，却不知道自己名义上的丈夫是次子贺逸宁。贺逸宁，贺家真正的继承人，叱咤风云的商业帝王，冷酷无情的职场暴君，她妹妹的做梦都想嫁的人。当这个商业帝王压着自己上下其手时，她懵了：“喂，你要做什么？我可是你的大嫂！”“大嫂？”贺逸宁邪魅一笑：“结婚证你真的看过了吗？”</p>
+							<p class="book-tag p"><span>连载</span><span>399万字</span><span>总裁</span><span>现代</span></p>
+						</div>
+					</div>
+					<div class="aladinBlock">
+						<div id="" class="aladinBlock-left">
+							<img  src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAyAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAxNEE2RUJGQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAxNEE2RUMwQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDE0QTZFQkRDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDE0QTZFQkVDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAIBgYGBgYIBgYIDAgH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" >
+						</div>
+						<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+							<h4>闪婚霸爱：叶少别烦我</h4>
+							<p class="author">我是木木</p>
+							<p class="author">★精华简介★ “这个女人，我要了！”惨遭男朋友卖掉的慕薇薇，摇身一变成为了叶少辰的妻子。休息室内，他的阴狠，让她崩溃，“你娶我的目的究竟是什么？”男人笑得邪冶，“娶你，当然是为了羞辱你了！”然而……“不许你想那个男人，我要去断了他的腿！”“我的女人只有我能欺负，谁敢动她一根汗毛，就是找死！”“谁准你晚上不回家的，有通知我吗？”说好的折磨怎么感觉变了味道……</p>
+							<p class="book-tag p"><span>完结</span><span>294万字</span><span>阴谋</span><span>虐文</span></p>
+						</div>
+					</div>
+					<div class="aladinBlock">
+						<div id="" class="aladinBlock-left">
+							<img  src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAyAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAxNEE2RUJGQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAxNEE2RUMwQ0E1MTExRTZBRUZEOEMzNjM5MjI1OUQzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDE0QTZFQkRDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDE0QTZFQkVDQTUxMTFFNkFFRkQ4QzM2MzkyMjU5RDMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAIBgYGBgYIBgYIDAgH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" >
+						</div>
+						<div id="" class="aladinBlock-right col-xs-9 col-sm-10 col-md-11">
+							<h4>奇迹中餐厅</h4>
+							<p class="author">顾生</p>
+							<p class="author">忽然捡到来自未来的厨神系统，被厨神系统带回20岁的南月有了金手指。
+南月被厨神系统培养成厨子之后……
+吃瓜群众：她做的饭能起死回生
+屌丝群众：黑店，比五星级还要贵
+吃货群众：好吃，开着飞机去排队
+国外群众：英国女王爱上了中国美食
+…………
+南月：除了系统，我一无所有。
+男神们：你还有我！
+**
+阅读指南，美食撩文，不喜勿食，谢谢合作！</p>
+							<p class="book-tag p"><span>连载</span><span>126万字</span><span>爽文</span><span>轻松</span></p>
+						</div>
+					</div>
+					<div class="div col-xs-12"></div>
+				</div>
+			</div>
+		</div>
+		<script src="../vue.js"></script>
+		<script src="../vue-resource.js"></script>
+		<script>
+// 			new Vue({
+// 				el:"#box",
+// 				data:{
+// 					data:''
+// 				},
+// 				beforeMount(){
+// 					this.ajaxs();
+// 				},
+// 				methods:{
+// 					ajaxs(){
+// 						this.$http.get('http://bookstoreapi.shuqireader.com/eva_bookstore/v1/module/query?appId=1&pageId=1&channelId=&versionId=&ver=&shuqi_h5=108&md5key=&userId=8000000&timestamp=1540111123&type=2&resetcache=&func_id=12%2C33%2C11%2C28%2C33%2C12%2C33%2C11%2C19&orderid=31%2C32%2C33%2C34%2C35%2C36%2C37%2C38%2C39&sign=9DAF1026FEDE7132AA923A9804601958&key=shuqiapi&_=1540111123607').then((data)=>{
+// 							this.data=data.data.data;
+// 							console.log(this.data)
+// 						},(data)=>{
+// 							console.log(data)
+// 						})
+// 					}
+// 				}
+// 			})
+		</script>
+	</body>
+</html>

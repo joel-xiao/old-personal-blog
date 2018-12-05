@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.center {
+				width: 850px;
+				height: auto;
+				margin-left: 200px;
+			}
+			
+			.container-left {
+				width: 200px;
+				height: auto;
+				/*border: 1px solid #000;*/
+				float: left;
+				position: fixed;
+				left: 0;
+				top: 0;
+			}
+			
+			.container-left ul li {
+				height: 50px;
+				line-height: 50px;
+				margin: 10px 0;
+				text-align: right;
+				padding-right: 30px;
+			}
+			
+			.container-left ul li a {
+				text-decoration: none;
+				color: #000;
+			}
+			
+			.container-top {
+				width: 850px;
+				height: 240px;
+				margin-bottom: 50px;
+			}
+			
+			.container {
+				width: 850px;
+				height: 610px;
+			}
+			
+			.box {
+				width: 400px;
+				height: 100px;
+				border: 1px solid #CCCCCC;
+				margin: 10px;
+				float: left;
+			}
+			
+			.box img {
+				width: 100px;
+				height: 100px;
+				float: left;
+			}
+			
+			.box h5 {
+				display: inline-block;
+				width: 290px;
+				font-size: 18px;
+				text-align: left;
+				position: relative;
+				/*margin: 10px 0;*/
+			}
+			
+			.box p {
+				width: 300px;
+				color: #CCCCCC;
+				font-size: 14px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				/*				margin: 5px 0;*/
+			}
+			
+			.box span {
+				display: inline-block;
+				margin-top: 8px;
+				color: #e54941;
+				float: left;
+			}
+			
+			.box a {
+				display: inline-block;
+				width: 85px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 14px;
+				border-radius: 15px;
+				text-decoration: none;
+				color: #FFFFFF;
+				background-color: dodgerblue;
+				text-align: center;
+				position: relative;
+				float: right;
+				margin-right: 20px;
+			}
+			
+			#left {
+				display: inline-block;
+				width: 25px;
+				height: 25px;
+				background-color: #ccc;
+				border: 1px solid #ccc;
+				border-radius: 50% 0 0 50%;
+				margin-left: 150px;
+				font-size: 18px;
+				float: left;
+				outline: none;
+			}
+			
+			#right {
+				display: inline-block;
+				width: 25px;
+				height: 25px;
+				background-color: #ccc;
+				border: 1px solid #ccc;
+				border-radius: 0 50% 50% 0;
+				font-size: 18px;
+				float: left;
+				outline: none;
+			}
+			
+			.text {
+				display: inline-block;
+				width: 30px;
+				height: 23px;
+				text-align: center;
+				line-height: 23px;
+				border: 1px solid #ccc;
+				float: left;
+			}
+			
+			.active {
+				display: inline-block;
+			}
+			
+			a.activeq,
+			.activeq {
+				display: none;
+			}
+			
+			.content {
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				width: 400px;
+				height: auto;
+				border: 1px solid #ccc;
+				border-top: none;
+			}
+			
+			.top {
+				width: 370px;
+				height: 50px;
+				line-height: 50px;
+				padding-left: 30px;
+				font-weight: bold;
+				border-top: 5px solid dodgerblue;
+				border-bottom: 1px solid #CCCCCC;
+				background: url(img/13.jpg) no-repeat 360px center;
+			}
+			
+			.top a {
+				text-decoration: none;
+				color: deepskyblue;
+			}
+			
+			.content ul {
+				height: auto;
+			}
+			
+			.content ul li {
+				width: 380px;
+				height: 50px;
+				line-height: 50px;
+				font-weight: bold;
+				float: left;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			
+			.lis {
+				width: 70px;
+				height: 30px;
+				margin-top: 12px;
+				margin-left: 30px;
+				height: 20px;
+				float: left;
+			}
+			
+			.lefte {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border: 1px solid #ccc;
+				font-size: 18px;
+				float: left;
+				text-decoration: none;
+				text-align: center;
+				line-height: 20px;
+				color: #000;
+			}
+			
+			.righte {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border: 1px solid #ccc;
+				font-size: 18px;
+				float: left;
+				text-decoration: none;
+				text-align: center;
+				line-height: 20px;
+				color: #000;
+			}
+			
+			.texte {
+				display: inline-block;
+				min-width: 20px;
+				height: 20px;
+				border: 1px solid #ccc;
+				font-size: 18px;
+				float: left;
+				text-decoration: none;
+				text-align: center;
+				line-height: 20px;
+				color: #000;
+			}
+			
+			.bottom {
+				float: right;
+				margin-right: 20px;
+			}
+			
+			.bottomq {
+				width: 400px;
+				height: 50px;
+				line-height: 50px;
+			}
+			
+			.leftq {
+				width: 210px;
+				background-color: #000000;
+				color: #CCCCCC;
+				font-size: 14px;
+				padding-left: 40px;
+				float: left;
+			}
+			
+			.leftq span {
+				color: #FFFFFF;
+				font-size: 22px;
+				font-weight: bold;
+			}
+			
+			.bottomq a {
+				display: block;
+				width: 150px;
+				height: 52.5px;
+				background-color: #76d470;
+				float: left;
+				text-align: center;
+				line-height: 49px;
+				text-decoration: none;
+				color: #FFFFFF;
+			}
+			
+			.block {
+				display: inline-block;
+				width: 150px;
+				text-align: left;
+				float: left;
+			}
+			
+			.blockq {
+				display: inline-block;
+				width: 100px;
+				color: red;
+				text-align: right;
+				float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container-left">
+			<ul>
+				<li>
+					<a href="javascript:;">桶</a>
+				</li>
+				<li>
+					<a href="javascript:;">美味汉堡/卷</a>
+				</li>
+				<li>
+					<a href="javascript:;">鸡翅/鸡排</a>
+				</li>
+				<li>
+					<a href="javascript:;">原味鸡</a>
+				</li>
+				<li>
+					<a href="javascript:;">小食/配餐</a>
+				</li>
+				<li>
+					<a href="javascript:;">甜品/冰淇淋</a>
+				</li>
+				<li>
+					<a href="javascript:;">缤纷饮料</a>
+				</li>
+				<li>
+					<a href="javascript:;">童书套餐</a>
+				</li>
+				<li>
+					<a href="javascript:;">新品上市</a>
+				</li>
+				<li>
+					<a href="javascript:;">K咖啡</a>
+				</li>
+			</ul>
+		</div>
+		<div class="center">
+			<div class="container-top">
+				<div class="box">
+					<img src="img/01.jpg" />
+					<h5>超级外送全家桶T</h5>
+					<p>香辣鸡腿堡1个+新奥尔良烤鸡腿堡一个+香辣鸡翅2块+新奥尔良烤翅8个</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥124</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+				<div class="box">
+					<img src="img/14.jpg" />
+					<h5>六味小吃桶T</h5>
+					<p>鲜嫩Q弹的全虾排，香脆鲜美，主要原料：玉米面虾排</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥83</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+				<div class="box">
+					<img src="img/12.jpg" />
+					<h5>饿了么经典回味桶T</h5>
+					<p>香辣鸡腿堡1个+新奥尔良烤鸡腿堡一个+香辣鸡翅2块+新奥尔良烤翅8个</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥121</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="box">
+					<img src="img/01.jpg" />
+					<h5>堡堡双人餐T</h5>
+					<p>香辣鸡腿堡1个+新奥尔良烤鸡腿堡一个+香辣鸡翅2块+新奥尔良烤翅8个</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥96.5</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+				<div class="box">
+					<img src="img/02.jpg" />
+					<h5>新奥尔良烤鸡腿堡T</h5>
+					<p>选用超大无骨鸡腿肉烤制，鲜嫩多汁，甜中带辣。主要</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥18.5</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+				<div class="box">
+					<img src="img/03.jpg" />
+					<h5>至珍虾堡T</h5>
+					<p>鲜嫩Q弹的全虾排，香脆鲜美，主要原料：玉米面虾排</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥19.5</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+				<div class="box">
+					<img src="img/04.jpg" />
+					<h5>香辣鸡腿堡T</h5>
+					<p>香辣鸡腿堡1个+新奥尔良烤鸡腿堡一个+香辣鸡翅2块+新奥尔良烤翅8个</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥18</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+				<div class="box">
+					<img src="img/05.jpg" />
+					<h5>劲脆鸡腿堡T</h5>
+					<p>香辣鸡腿堡1个+新奥尔良烤鸡腿堡一个+香辣鸡翅2块+新奥尔良烤翅8个</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥18</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+				<div class="box">
+					<img src="img/06.jpg" />
+					<h5>新奥尔良腿堡土豆泥套餐T</h5>
+					<p>香辣鸡腿堡1个+新奥尔良烤鸡腿堡一个+香辣鸡翅2块+新奥尔良烤翅8个</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥40</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+				<div class="box">
+					<img src="img/07.jpg" />
+					<h5>劲脆鸡腿堡土豆泥套餐T</h5>
+					<p>香辣鸡腿堡1个+新奥尔良烤鸡腿堡一个+香辣鸡翅2块+新奥尔良烤翅8个</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥39</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+				<div class="box">
+					<img src="img/08.jpg" />
+					<h5>香辣鸡腿堡土豆泥套餐T</h5>
+					<p>香辣鸡腿堡1个+新奥尔良烤鸡腿堡一个+香辣鸡翅2块+新奥尔良烤翅8个</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥39</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+				<div class="box">
+					<img src="img/09.jpg" />
+					<h5>老北京鸡肉卷T</h5>
+					<p>香辣鸡腿堡1个+新奥尔良烤鸡腿堡一个+香辣鸡翅2块+新奥尔良烤翅8个</p>
+					<p>☆☆☆☆☆（0）月售5份</p>
+					<span>￥16</span>
+					<a href="javascript:;">加入购物车</a>
+					<div class="bottom activeq">
+						<input type="button" value="-" id="left" />
+						<div class="text">1</div>
+						<input type="button" value="+" id="right" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="top">
+				购物车
+				<a href="javascript:;">[清空]</a>
+			</div>
+			<ul>
+				<!--<li>
+			<span class="block">堡堡双人餐T</span>
+			<div class="lis">
+				<a href="javascript:;" class="lefte" />-</a>
+				<div class="texte">1</div>
+				<a href="javascript:;" class="righte" />+</a>
+			</div>
+			<span class="blockq">￥98.5</span>
+			</li>
+			<li>
+			<span class="block">堡堡双人餐T</span>
+			<div class="lis">
+				<a href="javascript:;" class="lefte" />-</a>
+				<div class="texte">1</div>
+				<a href="javascript:;" class="righte" />+</a>
+			</div>
+			<span class="blockq">￥98.5</span>
+			</li>
+			<li>
+			<span class="block">堡堡双人餐T</span>
+			<div class="lis">
+				<a href="javascript:;" class="lefte" />-</a>
+				<div class="texte">1</div>
+				<a href="javascript:;" class="righte" />+</a>
+			</div>
+			<span class="blockq">￥98.5</span>
+			</li>-->
+			</ul>
+			<div class="bottomq">
+				<div class="leftq"><span>￥09.00</span>|配送费￥9</div>
+				<a href="javascript:;">去结算></a>
+			</div>
+		</div>
+		<script>
+			var aBox = document.querySelectorAll('.center .box');
+			var aH = document.querySelectorAll('.center .box h5');
+			var aSpan = document.querySelectorAll('.center .box span');
+			var aA = document.querySelectorAll('.center .box a');
+			var aBoxb = document.querySelectorAll('.center .box .bottom');
+			var aJia = document.querySelectorAll('#right');
+			var aJian = document.querySelectorAll('#left');
+			var aText = document.querySelectorAll('.text');
+			var aQk = document.querySelector('.content .top a');
+			var oBtq = document.querySelector('.bottomq');
+			var oUl = document.querySelector('.content ul');
+			var oSpan = document.querySelector('.bottomq .leftq span');
+			var aSp = document.querySelectorAll('.box span');
+			var arr = [];
+			var s = 0;
+			for(var i = 0; i < aBox.length; i++) {
+				aA[i].index = i;
+				aA[i].onclick = function() {
+					oUl.innerHTML = '';
+					this.className = 'activeq';
+					aBoxb[this.index].className = 'bottom active';
+					aText[this.index].innerHTML = 1;
+					oName = aH[this.index].innerHTML;
+					oNum = aText[this.index].innerHTML;
+					aTExt = aText[this.index];
+					oN = aSp[this.index].innerHTML.substr(1);
+					n1 = this.index;
+					arr.push({
+						name: oName,
+						num: oNum,
+						n: oN,
+						m: n1,
+						text: aTExt
+					});
+
+					create();
+
+				}
+				aJia[i].index = i;
+				aJia[i].onclick = function() {
+					oUl.innerHTML = '';
+					oName = aH[this.index].innerHTML;
+					aText[this.index].innerHTML++;
+					for(var j = 0; j < arr.length; j++) {
+						if(arr[j].name == oName) {
+							arr[j].num = parseInt(arr[j].num) + 1;
+							create();
+						}
+					}
+					tab();
+				}
+				aJian[i].index = i;
+				aJian[i].onclick = function() {
+					oUl.innerHTML = '';
+					oName = aH[this.index].innerHTML;
+					aText[this.index].innerHTML--;
+					if(aText[this.index].innerHTML < 1) {
+						aA[this.index].className = '';
+						aBoxb[this.index].className = 'bottom activeq';
+					}
+					for(var j = 0; j < arr.length; j++) {
+						if(arr[j].num == 1) {
+							arr.splice(arr[j], 1);
+							create();
+							return false;
+						}
+						if(arr[j].name == oName) {
+							arr[j].num = parseInt(arr[j].num) - 1;
+						}
+						create();
+						tab();
+					}
+
+				}
+				tab();
+			}
+
+			function tab() {
+				s = 9;
+				for(var i = 0; i < arr.length; i++) {
+					s += arr[i].num * arr[i].n;
+				}
+				oSpan.innerHTML = '￥' + s.toFixed(2);
+			}
+			function create() {
+				for(var x = 0; x < arr.length; x++) {
+					oLi = document.createElement('li');
+					oSpan1 = document.createElement('span');
+					oLis = document.createElement('div');
+					oJia = document.createElement('a');
+					oText = document.createElement('div');
+					oJian = document.createElement('a');
+					oSpan2 = document.createElement('span');
+					oSpan1.className = 'block';
+					oSpan1.innerHTML = arr[x].name;
+					oLis.className = 'lis';
+					oJian.className = 'lefte';
+					oJian.innerHTML = '-';
+					this.x = this.index;
+					oText.className = 'texte';
+					oText.innerHTML = arr[x].num;
+					oJia.className = 'righte';
+					oJia.innerHTML = '+';
+					oSpan2.className = 'blockq';
+					oSpan2.innerHTML = '￥' + arr[x].n;
+					oLis.appendChild(oJian);
+					oLis.appendChild(oText);
+					oLis.appendChild(oJia);
+					oLi.appendChild(oSpan1);
+					oLi.appendChild(oLis);
+					oLi.appendChild(oSpan2);
+					oUl.appendChild(oLi);
+					var aleft = oUl.querySelectorAll('.lefte');
+					var aRight = oUl.querySelectorAll('.righte');
+					var aTxt = oUl.querySelectorAll('.texte');
+					for(var j = 0; j < aRight.length; j++) {
+						aRight[j].index = j;
+						aRight[j].onclick = function() {
+							arr[this.index].num = parseInt(arr[this.index].num) + 1;
+							arr[this.index].text.innerHTML = arr[this.index].num;
+							aTxt[this.index].innerHTML = arr[this.index].num;
+							console.log(arr[this.index].num)
+							tab()
+						}
+						aleft[j].index = j;
+						aleft[j].onclick = function() {
+							oUl.innerHTML = '';
+							for(var g = 0; g < aBox.length; g++) {
+								if(aText[g].innerHTML == 1) {
+									aA[g].className = '';
+									aBoxb[g].className = 'bottom activeq';
+								}
+							}
+							for(var g = 0; g < arr.length; g++) {
+								if(arr[g].num == 1) {
+									arr[g].num = 1
+									arr.splice(arr[g], 1);
+									create()
+									tab()
+									return false;
+								}
+							}
+							arr[this.index].num = parseInt(arr[this.index].num) - 1;
+							arr[this.index].text.innerHTML = arr[this.index].num;
+							aTxt[this.index].innerHTML = arr[this.index].num;
+							create()
+							tab()
+						}
+					}
+				}
+
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,347 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	width: 16rem;
+	height: 63rem;
+	background-color: #f0f0f0;
+}
+.nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 16rem;
+	height: 2.2rem;
+	background-color: #000;
+	line-height: 2.2rem;
+	font-size: 0.85rem;
+	font-family: "Tahoma";
+	color: #fff;
+}
+.nav a img{
+	float: left;
+	width: 0.65rem;
+	height: 1.075rem;
+	margin-top: 0.55rem;
+	margin-left: 0.425rem;
+	margin-right: 0.3rem;
+}
+.nav a:nth-child(2){
+	font-weight: bold;
+	margin-right: 4.05rem;
+	margin-left: 3.5rem;
+}
+.nav a:link{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.nav a:visited{
+	color: #FFFFFF;
+}
+.banner{
+	font-family: "微软雅黑";
+	margin-top: 2.2rem;
+	width: 16rem;
+	height: 21.675rem;
+	background: url(../images/banner_02.png) no-repeat;
+	background-size: 16rem 21.675rem;
+}
+.banner dl{
+	float: left;
+	margin-top: 0.725rem;
+	margin-left: 6.175rem;
+	width: 3.75rem;
+	height:6.7rem;
+}
+.banner dl dt{
+	height: 3.625rem;
+	margin-bottom: 0.5rem;
+}
+.banner dl dt img{
+	padding-left: 0;
+	display: block;
+	height: 3.625rem;
+	width: 3.625rem;
+	margin-left: 0.1rem;
+	margin-top: 0;
+}
+.banner dl dd{
+	height: 3.625rem;
+}
+.banner dl dd h3{
+	text-indent: 0.95rem;
+	font-size: 0.85rem;
+	color: #FFFFFF;
+	font-family: "微软雅黑";
+	font-weight: normal;
+}
+.banner dl dd p{
+	float: left;
+	color: #7d7d7d;
+	font-family: "微软雅黑";
+	font-size: 0.6rem;
+	line-height: 1.725rem;
+	margin-left: 0;
+	margin-top: 0;
+}
+.banner input{
+	cursor: pointer;
+	margin-left: 5.3rem;
+	width: 5.4rem;
+	height: 1rem;
+	border-radius: 0.1rem;
+	border: 0.025rem #f2c927 solid;
+	background:none;
+	font-size: 0.6rem;
+	color: #f2c927;	
+	outline: none;
+}
+.deng{
+	float: right;
+	width: 1.5rem;
+	height: 2.1rem;
+	margin-right: 1.1rem;
+	margin-top: 0.925rem;
+	color: #964e02;
+	font-size: 0.5rem;
+	text-align: center;
+}
+.deng img{
+	width: 1.5rem;
+	height: 1.475rem;
+	display: block;
+	margin-bottom: 0.1rem;
+	padding-left: 0;
+	margin-top: 0;
+}
+.deng a:link{
+	text-decoration: none;
+	color: #964e02;
+}
+.deng a:visited{
+	color: #964e02;
+}
+.banner span{
+	text-indent:6rem;
+	color: #FFFFFF;
+	margin: 0 auto;
+	margin-top: 0.4rem;
+	display: block;
+	color: 0.6rem;
+	font-family: "Arial";
+	font-size: 0.6rem;
+}
+.banner p{
+	height: 0.6rem;
+	margin-top: 9.4rem;
+	font-size: 0.6rem;
+	color: #FFFFFF;
+	margin-left: 5.225rem;
+}
+.banner p a{
+	display: block;
+	margin-right: 0.65rem;
+	float: left;
+}
+.banner p a:link{
+	text-decoration: none;
+	color: #fff;
+}
+.banner p a:visited{
+	color: #fff;
+}
+.banner-a img{
+	padding-top: 0.5rem;
+	padding-left: 7.5rem;
+	display: block;
+	width: 1rem;
+	height: 0.5rem;
+}
+.nav2{
+	padding-left: 1rem;
+	width: 15rem;
+	height: 3.5rem;
+	background-color: #000;
+	font-family: "微软雅黑";
+}
+.nav2 dl{
+	margin-top: 0.33rem;
+	float: left;
+	width: 1.75rem;
+	height: 2.8rem;
+	margin-right: 2.3rem;
+}
+.nav2 dl:last-child{
+	margin-right: 0;
+	
+}
+.nav2 dl dt img{
+	display: block;
+	width: 1.05rem;
+	height: 0.9rem;
+	padding-left: 0.325rem;
+	margin-bottom: 0.4rem;
+}
+.nav2 dl dd{
+	text-align: center;
+	font-size: 0.64775rem;
+	color: #f19700;
+}
+.nav2 dl a:link{
+	text-decoration: none;
+	color: #f19700;
+}
+.nav2 dl a:visited{
+	color: #f19700;
+}
+.nav2 dl span{
+	color: #3a3a3a;
+	font-size: 0.425rem;
+}
+.main{
+	width: 16rem;
+	height: 38.075rem;
+	margin: 0 auto;
+}
+.main-top{
+	padding-left: 0.72rem;
+	padding-right: 0.72rem;
+	width: 14.55rem;
+	height: 14.525rem;
+	background-color: #fff;	
+	font-family:"微软雅黑";
+	color: #424143;
+}
+.main p{
+	width: 14.55rem;
+	height: 1.65rem;
+	font-size: 0.6915rem;
+	line-height: 1.65rem;
+}
+.main p img{
+	width: 0.825rem;
+	display: block;
+	height: 0.675rem;
+	float: left;
+	margin-top: 0.5rem;
+	margin-right: 0.4rem;
+}
+.main a:link{
+	text-decoration: none;
+	color: #424143;
+}
+.main a:visited{
+	color: #424143;
+}
+.main-top ul{
+	}
+.main-top ul li{
+	font-size: 0.6rem;
+	line-height: 2.1rem;
+	font-size: 0.45rem;
+	height: 2.1rem;
+	border-bottom: 0.025rem #eeeeee solid;
+	list-style-type: none;
+	background:url(../images/main-ul_19.png) no-repeat right center;
+	background-size: 0.225rem 0.425rem;
+}
+.main-top ul li img{
+	width: 1.175rem;
+	height: 1.125rem;
+	float: left;
+	display: block;
+	margin-right: 0.45rem;
+	margin-top: 0.5rem;
+}
+.main-top ul li:last-child{
+	border-bottom: none;
+}
+.main-center{
+	width: 16rem;
+	height: 7.675rem;
+	background-color: #fff;
+	margin-top: 0.25rem;
+}
+.main-center p{
+	padding-left: 0.75rem;
+}
+.main-center img{
+	width: 16rem;
+	height: 6rem;
+}
+.main-bottom{
+	width: 14.5rem;
+	height: 15.4rem;
+	background-color: #fff;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	margin-top: 0.25rem;
+}
+.main-bottom span{
+	float: right;
+	font-size: 0.6rem;
+	color: #424143;
+}
+.main-bottom  span img{
+	float: right;
+	display: block;
+	width: 0.225rem;
+	height: 0.425rem;
+	margin-left: 0.25rem;
+	margin-right: 0;
+	margin-top: 0.6rem;
+}
+.main-bottom  dl{
+	float: left;
+	height:6.15rem;
+	width: 7.075rem;
+	border: 0.025rem #eeeeee solid;
+	border-radius: 0.15rem;
+}
+.main-bottom  dl:nth-child(3),.main-bottom  dl:nth-child(5){
+	margin-right: 0;
+	margin-left: 0.25rem;
+	margin-bottom: 0.25rem;
+}
+.main-bottom  dl dt{
+	width: 7.075rem;
+}
+.main-bottom  dl dt img{
+	display: block;
+	margin: 0;
+	width: 7.075rem;
+	height: 4.225rem;
+}
+.main-bottom  dl dd {
+	position: relative;
+	padding-left: 0.25rem;
+	width: auto;
+}
+.main-bottom  dl dd p{
+	margin-right: 0;
+	width: 2.5rem;
+	font-size: 0.6rem;
+	color: #000;
+	line-height: 1rem;
+	height: 1rem;
+}
+.main-bottom  dl dd img{
+	padding-top: 0;
+	width: 0.425rem;
+	height: 0.425rem;
+	margin-right: 0.05rem;
+	float: left;
+}
+.aaa {
+	font-size: 0.6rem;
+	top: 0.76rem;
+	left: 5.475rem;
+	position: absolute;
+	color: #ed1447;
+	margin-right: 0.25rem;
+}
+.aaa span{
+	color: #777777;
+	float: left;
+}

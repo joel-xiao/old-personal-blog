@@ -1,0 +1,63 @@
+[
+	{
+		"img": "img/phone1.png",
+		"tile": "小米8"
+	}, {
+		"img": "img/phone2.jpg",
+		"tile": "小米8 SE"
+	}, {
+		"img": "img/phone3.png",
+		"tile": "小米MIX 2S"
+	}, {
+		"img": "img/phone4.jpg",
+		"tile": "小米6X"
+	}, {
+		"img": "img/phone5.png",
+		"tile": "黑鲨游戏手机"
+	}, {
+		"img": "img/phone6.png",
+		"tile": "小米MIX 2"
+	}, {
+		"img": "img/phone7.png",
+		"tile": "小米Max 2"
+	}, {
+		"img": "img/phone8.png",
+		"tile": "红米6 Pro"
+	}, {
+		"img": "img/phone9.png",
+		"tile": "红米6"
+	}, {
+		"img": "img/phone10.png",
+		"tile": "红米6A"
+	}, {
+		"img": "img/phone11.png",
+		"tile": "红米Note 5"
+	}, {
+		"img": "img/phone12.jpg",
+		"tile": "红米S2"
+	}, {
+		"img": "img/phone13.png",
+		"tile": "红米5 Plus"
+	}, {
+		"img": "img/phone14.jpg",
+		"tile": "红米5"
+	}, {
+		"img": "img/phone15.png",
+		"tile": "红米5A"
+	}, {
+		"img": "img/phone16.png",
+		"tile": "移动4G+专区"
+	}, {
+		"img": "img/phone17.jpg",
+		"tile": "对比手机"
+	}, {
+		"img": "img/phone18.png",
+		"tile": "米粉卡 日租卡"
+	}, {
+		"img": "img/phone19.png",
+		"tile": "小米移动 电话卡"
+	}, {
+		"img": "img/phone20.jpg",
+		"tile": "手机上门维修"
+	}
+]
